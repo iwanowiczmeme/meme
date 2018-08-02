@@ -8,6 +8,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 SECRET_KEY = '4lp2q-fvqohza!8jdr)l!p(%ig$z)dg=orsh4!mlv)y_x*wqh*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -25,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userApp',
+    'storageApp',
 ]
 
 MIDDLEWARE = [
