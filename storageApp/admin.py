@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models improt UserInputSignal
 
-# Register your models here.
+
+admin.site.register(UserInputSignal)
