@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
+from .forms import CaptchaUserCreationForm
 
 
 def index(request):
@@ -18,7 +18,7 @@ def signup(request):
 
     if request.method == 'POST':
 
-        form = UserCreationForm(request.POST)
+        form = CaptchaUserCreationForm(request.POST)
 
         if form.is_valid():
 
@@ -30,6 +30,6 @@ def signup(request):
             return redirect('/home')
 
     else:
-        form = UserCreationForm()
+        form = CaptchaUserCreationForm()
 
     return render(request, 'registration/signup.html', {'form': form})
