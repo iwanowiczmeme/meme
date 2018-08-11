@@ -34,5 +34,8 @@ urlpatterns = [
     path('home', userviews.home, name='home'),
 
     # === storageApp ===
-    path('storage', storageviews.storage, name='storage')
+    path('storage-main', storageviews.storage_main, name='storage-main'),
+    path('storage', storageviews.storage, name='storage'),
+    path('storage-list', storageviews.storage_list, name='storage-list'),
+    path('signal/delete/<int:pk>', storageviews.delete, name='delete'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
