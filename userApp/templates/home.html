@@ -1,55 +1,35 @@
+{% extends 'home_base.html' %}
 
-{% extends 'base.html' %}
-{% block content %}
+{% block storage_content %}
 
-  <div class="container">
 
-    <br>
-
-    <div class="row" style="text-align: center;">
-
-      <div class="col-lg-12">
-        <h1>Signal Analysis Application</h1>
-        {% if request.user.is_authenticated %}
-          <span>Hello, {{ request.user.username }} MORE PLACEHOLDER TEXT</span>
-          <a href="{% url 'logout' %}">Logout</a>
-        {% endif %}
-      </div>
-
+  <div class="row">
+    <div class="col-lg-6">
+      <a href="{% url 'storage-main' %}" class="btn btn-primary btn-block">Signal management</a>
     </div>
 
-    <hr>
-
-    <div class="row" style="padding: auto;">
-
-      <div class="col-lg-6">
-       <a href="{% url 'storage' %}" class="btn btn-primary btn-block">Signal management</a>
-      </div>
-
-      <div class="col-lg-6">
-       <a href="#" class="btn btn-primary btn-block">Signal processing</a>
-      </div>
-
+    <div class="col-lg-6">
+      <a href="#" class="btn btn-primary btn-block">Signal processing</a>
     </div>
+  </div>
 
-    <div class="row" style="padding-top: 2%;">
-      <div class="col-lg-12">
-        <img src="https://images.unsplash.com/photo-1482745637430-91c0bbcea3e1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c0e1624bfa6a8a9937276964b2747ef7&auto=format&fit=crop&w=1350&q=80" class="img-fluid img-thumbnail">
-      </div>
+
+  <div class="row" style="padding-top: 2%;">
+    <div class="col-lg-12">
+      <img src="https://images.unsplash.com/photo-1482745637430-91c0bbcea3e1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c0e1624bfa6a8a9937276964b2747ef7&auto=format&fit=crop&w=1350&q=80" class="img-fluid img-thumbnail">
     </div>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div class="jumbotron" style="margin: auto;">
-      <h1>What is that app?</h1>
-      <h5 style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum.</h5>
-    </div>
-
+  <div class="jumbotron" style="margin: auto;">
+    <h1>What is that app?</h1>
+    <h5 style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+    mollit anim id est laborum.</h5>
   </div>
 
 {% endblock %}

@@ -1,6 +1,10 @@
+
 {% extends 'home_base.html' %}
+{% load static %}
+
 
 {% block storage_content %}
+
 
   <div class="row">
     <div class="col-lg-12">
@@ -31,21 +35,30 @@
   <br>
 
   <div class="signal-storage-form" style="text-align: center;">
-    <h1>Input your signal here:</h1>
-
-    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-          <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p}}
-            <br>
-            <button type="submit" class="btn btn-outline-success">Upload Signal</button>
-          </form>
-        </div>
-        <div class="col-lg-3"></div>
-    </div>
-
+    <h1>Uploaded Signals:</h1>
   </div>
+
+
+  {% for signal in signals %}
+    <div class="row">
+      <h1>{{ signal.name }}</h1>
+      <hr>
+    </div>
+    <div class="row">
+      <h6>{{ signal.adnotations }}</h6>
+    </div>
+    <div class="row">
+      <button data-id="{{ signal.id }}" onclick='delteSignal(this)' class="btn btn-danger">Delete</button>
+    </div>
+    <hr>
+  {% endfor %}
+
+
+
+  <script src="{% static 'js\storage.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var csrf_token = '{{ csrf_token }}'
+  </script>
 
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models improt UserInputSignal
+from .models import InputSignal
 
 
-admin.site.register(UserInputSignal)
+admin.site.register(InputSignal)
